@@ -35,6 +35,7 @@ def get_release_times(anime_title, time_zone):
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
     
+    
     if 'data' in data and data['data']['Media']:
         anime = data['data']['Media']
         if anime['title']['english'] is not None:
